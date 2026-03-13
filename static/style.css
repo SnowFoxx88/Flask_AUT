@@ -1,0 +1,86 @@
+:root {
+  --primary_color: #007bff;
+  --primary_hover_color: #0056b3;
+  --success_color: #28a745;
+  --success_hover_color: #218838;
+  --title_color: #333;
+  --background_color: #f5deb3;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background_color);
+}
+
+
+.content{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.content h1{
+    color: var(--primary_hover_color);
+}
+
+.content h4{
+    color: var(#666);
+}
+
+.content table{
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.content table th,
+.content table td{
+    padding: 10px;
+    border: 1px solid #ccc;
+
+}
+
+.content table th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+
+a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: var(--primary_color);
+    color: #fff;
+    text-decoration: none;
+    transition: background_color 0.3s ease
+}
+
+
+a:hover {
+    background-color: var(--primary_hover_color);
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+#btn_add{
+    background-color: var(--success_color);
+    color: #fff;
+    cursor: pointer;
+}
+
+#btn_add:hover{
+    background-color: var(--success_hover_color);
+}
