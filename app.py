@@ -4,16 +4,20 @@ from flask_login import UserMixin, login_user
 from datetime import datetime, timezone
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_required, current_user, LoginManager, logout_user
+import os
+from dotenv import load_dotenv
 
+# Load the .env file
+load_dotenv()
 
 # 1. APP CONFIGURATION
 app = Flask(__name__)
 
 # The secret_key is like a 'password' for your app to secure cookies/sessions
-app.secret_key = "protmy123"
+app.secret_key = os.getenv("SECRET_KEY")
 
 # Tell SQLAlchemy where our database file is located (SQLite creates a local file)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialize the Database and Login Manager
