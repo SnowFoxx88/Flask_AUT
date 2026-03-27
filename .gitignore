@@ -1,0 +1,20 @@
+# Python Cache (unwichtig für Git)
+__pycache__/
+*.py[cod]
+
+# Virtual Environment (Viel zu groß für Git)
+.venv/
+env/
+venv/
+
+# Sensible Daten (Passwörter, Pfade)
+.env
+
+# Datenbanken (Sollten lokal und auf dem Server getrennt bleiben)
+instance/
+*.db
+*.sqlite3
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
