@@ -56,6 +56,10 @@ class MyTask(db.Model):
         return f"Task {self.id}"
 
 
+with app.app_context():
+    db.create_all()  # This creates the .db file and tables if they don't exist
+
+
 ###################################### AUTHENTICATION ######################################
 # This function helps Flask-Login load the user from their ID stored in a cookie
 @login_manager.user_loader
@@ -176,7 +180,4 @@ def logout():
 
 # Runner and Debugger
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()  # This creates the .db file and tables if they don't exist
-
     app.run(debug=True)
