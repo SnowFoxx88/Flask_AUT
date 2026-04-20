@@ -48,7 +48,7 @@ class MyTask(db.Model):
     content = db.Column(db.String(100), nullable=False)
     complete = db.Column(db.Integer)
     # Use timezone-aware UTC time to avoid confusion between timezones
-    created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+    created = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc).astimezone())
     # Foreign Key connects a task to a specific user via their ID
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
